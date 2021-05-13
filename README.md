@@ -1,6 +1,7 @@
 # Logging Microservice
 
-> *This Microservice is intended to collect logs from Kafka and push them to mongoDB documents also, it has various endpoints exposed to consume user activities for the purpose of tracking and audit.*
+> *This logging Microservice is intended to collect logs from Kafka and push them to mongoDB documents also, it has various endpoints exposed to consume user activities for the purpose of tracking and audit.
+> It is build up on Nest.js and uses kafka to consume messages and typeORM for database operations*
 
 
 ### > Steps to run and test this service
