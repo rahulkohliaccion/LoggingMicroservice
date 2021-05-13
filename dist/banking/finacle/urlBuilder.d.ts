@@ -1,0 +1,10 @@
+export declare const FINACLE_BASE_URL = "http://localhost:8082/finbranch/FIP/V1.0";
+export declare const GET_CUSTOMER_ACCOUNT_LIST: (data: any) => string;
+export declare const GET_ACCOUNT_BALANCE_DETAIL: (data: any) => string;
+export declare const CREATE_CURRENT_ACCOUNT: (data: any) => string;
+export declare const GET_DEPOSIT_ACCOUNT_DETAILS: (data: any) => string;
+export declare const GET_LOAN_DUE_DETAILS: (data: any) => string;
+export declare const GET_GENERAL_LOAN_DETAILS: (data: any) => string;
+export declare const GET_LOAN_DUE_POSITION_DETAILS: (data: any) => string;
+export declare const LIST_TRANSACTIONS: (data: any) => string;
+export declare const LIST_SCHEDULED_PAYMENT_DETAILS: (data: any) => string;

@@ -1,0 +1,101 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bankingms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bankingms
+      tier: banking
+  template:
+    metadata:
+      labels:
+        app: bankingms
+        tier: banking
+    spec:
+      containers:
+        - name: bankingms
+          image: ifsgdev/corebankingms
+          imagePullPolicy: Always
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: NODE_ENV
+              value: "production"
+            - name: DATABASE_HOST
+              value: "kong-qa.cdxxzcibzjzr.us-east-1.rds.amazonaws.com"
+            - name: DATABASE_SID
+              value: "ORCL"
+            - name: DATABASE_PORT
+              value: "1521"
+            - name: DATABASE_USERNAME
+              value: "kong_svc"
+            - name: DATABASE_PASSWORD
+              value: "bA8fK5NQ3I"
+            - name: DATABASE_NAME
+              value: kong-mc
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bankingms
+spec:
+  selector:
+    app: bankingms
+    tier: banking
+  ports:
+    - port: 3000
+      targetPort: 3000
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: kong
+    konghq.com/override: bankingms-customization
+  name: bankingms-ing
+  namespace: default
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              serviceName: bankingms
+              servicePort: 3000
+            path: /banking
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: bankingms-customization
+  namespace: default
+proxy:
+  protocol: http
+  connect_timeout: 10000
+  retries: 10
+  read_timeout: 10000
+  write_timeout: 10000
+route:
+  methods:
+    - POST
+    - GET
+    - PUT
+    - OPTIONS
+    - HEAD
+    - DELETE
+  regex_priority: 0
+  strip_path: true
+  preserve_host: true
+  protocols:
+    - http
+    - https

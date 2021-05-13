@@ -1,0 +1,10 @@
+export declare const LIST_ALL_ACCOUNT_URL = "/v1.0/account";
+export declare const CREATE_CURRENT_ACCOUNT_URL = "/v1.0/current";
+export declare const DEPOSIT_ACCOUNT_DETAILS_URL = "/v1.0/deposit/:accountId";
+export declare const LOAN_ACCOUNT_DETAILS_URL = "/v1.0/loan/:accountId";
+export declare const LOAN_OVERDUE_URL = "/v1.0/loan/:accountId/overdue";
+export declare const LOAN_INSTALLMENT_URL = "/v1.0/loan/:accountId/installment";
+export declare const LOAN_OVERDUE_POSITION_URL = "/v1.0/loan/:accountId/overdue/positions";
+export declare const LIST_TRANSACTION_URL = "/v1.0/current/:accountId/transaction";
+export declare const LIST_SCHEDULED_PAYMENTS_URL = "/v1.0/current/:accountId/payment/scheduled";
+export declare const PROCESS_INTERNAL_FUND_TRANSFER_URL = "/v1.0/current/:accountId/payment/internal";

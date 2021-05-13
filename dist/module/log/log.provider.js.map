@@ -1,0 +1,1 @@
+{"version":3,"file":"log.provider.js","sourceRoot":"","sources":["../../../src/module/log/log.provider.ts"],"names":[],"mappings":";;;AAAA,sDAAyE;AAEzE,oDAAgD;AAEnC,QAAA,YAAY,GAAG;IACxB;QACI,OAAO,EAAE,yBAAc;QACvB,UAAU,EAAE,CAAC,UAAsB,EAAE,EAAE,CACnC,UAAU,CAAC,aAAa,CAAC,sBAAS,CAAC;QACvC,MAAM,EAAE,CAAC,8BAAmB,CAAC;KAChC;CACJ,CAAC"}
