@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv';
-dotenv.config()
+// import * as dotenv from 'dotenv';
+// dotenv.config()
 
 export const DATABASE_CONNECTION = 'DATABASE_CONNECTION';
 export const COUNTRY_REPOSITORY = 'COUNTRY_REPOSITORY';

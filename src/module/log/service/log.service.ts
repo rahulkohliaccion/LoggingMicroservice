@@ -13,33 +13,43 @@ export class LogService {
     ) { }
 
     async saveInfoLogs(logger) {
-        Logger.log(`log here -> ${JSON.stringify(logger.value)}`)
-        this.logRepository.save(logger.value)
-        .catch(error => Logger.log(error))
+        Logger.debug(`${JSON.stringify(logger.value.log)}`)
+        try {
+            await this.logRepository.save(logger.value.log)
+        }
+        catch (error) { Logger.error(error) }
     }
 
     async saveDebugLogs(logger) {
-        // Logger.log(`log here -> ${JSON.stringify(logger.value)}`)
-        this.logRepository.save(logger.value)
-        .catch(error => Logger.log(error))
+        Logger.debug(`${JSON.stringify(logger.value.log)}`)
+        try {
+            await this.logRepository.save(logger.value.log)
+        }
+        catch (error) { Logger.error(error) }
     }
 
     async saveVerboseLogs(logger) {
-        // Logger.log(`log here -> ${JSON.stringify(logger.value)}`)
-        this.logRepository.save(logger.value)
-        .catch(error => Logger.log(error))
+        Logger.debug(`${JSON.stringify(logger.value.log)}`)
+        try {
+            await this.logRepository.save(logger.value.log)
+        }
+        catch (error) { Logger.error(error) }
     }
-    
+
     async saveErrorLogs(logger) {
-        // Logger.log(`log here -> ${JSON.stringify(logger.value)}`)
-        this.logRepository.save(logger.value)
-        .catch(error => Logger.log(error))
+        Logger.debug(`${JSON.stringify(logger.value.log)}`)
+        try {
+            await this.logRepository.save(logger.value.log)
+        }
+        catch (error) { Logger.error(error) }
     }
 
     async saveFatalLogs(logger) {
-        // Logger.log(`log here -> ${JSON.stringify(logger.value)}`)
-        this.logRepository.save(logger.value)
-        .catch(error => Logger.log(error))
+        Logger.debug(`${JSON.stringify(logger.value.log)}`)
+        try {
+            await this.logRepository.save(logger.value.log)
+        }
+        catch (error) { Logger.error(error) }
     }
 
 }

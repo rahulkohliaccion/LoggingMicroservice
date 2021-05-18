@@ -10,27 +10,27 @@ export class LogController {
     constructor(private readonly logService: LogService) {}
 
     @MessagePattern(INFO_LOG_TOPIC(), Transport.KAFKA)
-    addInfoLog(@Body() body:any ): any {
-        return this.logService.saveInfoLogs(body)
+    addInfoLog(@Body() body:any ) {
+        this.logService.saveInfoLogs(body)
     }
 
     @MessagePattern(DEBUG_LOG_TOPIC(), Transport.KAFKA)
-    addDebugLog(@Body() body:any ): any {
-        return this.logService.saveDebugLogs(body)
+    addDebugLog(@Body() body:any ) {
+        this.logService.saveDebugLogs(body)
     }
 
     @MessagePattern(VERBOSE_LOG_TOPIC(), Transport.KAFKA)
-    addVerboseLog(@Body() body:any ): any {
-        return this.logService.saveVerboseLogs(body)
+    addVerboseLog(@Body() body:any ) {
+        this.logService.saveVerboseLogs(body)
     }
 
     @MessagePattern(ERROR_LOG_TOPIC(), Transport.KAFKA)
-    addErrorLog(@Body() body:any ): any {
-        return this.logService.saveErrorLogs(body)
+    addErrorLog(@Body() body:any ) {
+        this.logService.saveErrorLogs(body)
     }
 
     @MessagePattern(FATAL_LOG_TOPIC(), Transport.KAFKA)
-    addFatalLog(@Body() body:any ): any {
-        return this.logService.saveFatalLogs(body)
+    addFatalLog(@Body() body:any ) {
+        this.logService.saveFatalLogs(body)
     }
 }
